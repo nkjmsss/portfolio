@@ -10,12 +10,14 @@ export default {
 
 <style lang="scss" scoped>
 .frame {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   padding: $margin;
+  pointer-events: none;
+  z-index: 100;
 
   &::after {
     content: '';

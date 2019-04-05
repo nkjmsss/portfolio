@@ -51,7 +51,7 @@ $vertical-padding: 8px;
     position: absolute;
     right: 0;
     transform: translateY(-50%);
-    transition: ease-out 0.3s;
+    transition: ease-out 0.5s;
     opacity: 1;
   }
 
@@ -82,12 +82,13 @@ $vertical-padding: 8px;
     &::before,
     &::after {
       top: $size / 2;
+      background-color: $white;
     }
   }
 
   &--open &__line {
-    transform: translate(200%, -50%);
     opacity: 0;
+    background-color: $white;
   }
 }
 </style>

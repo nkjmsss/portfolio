@@ -26,15 +26,17 @@ export default {
 <style lang="scss" scoped>
 $size: 32px;
 $vertical-padding: 8px;
+$margin-ratio: 3;
 
 .hamberger {
   position: absolute;
-  top: $margin * 2.5;
-  right: $margin * 2.5;
-  width: $size;
-  height: $size;
+  top: $margin;
+  right: $margin;
+  width: $size + $margin * $margin-ratio;
+  height: $size + $margin * $margin-ratio;
   cursor: pointer;
   z-index: 10000;
+  transition: ease-out 0.2s;
 
   &::before,
   &::after {
@@ -49,23 +51,37 @@ $vertical-padding: 8px;
     height: 2px;
     background-color: $black;
     position: absolute;
-    right: 0;
+    right: $margin * $margin-ratio / 2;
     transform: translateY(-50%);
-    transition: ease-out 0.5s;
+    transition: background-color ease-out 0.2s, ease-out 0.5s;
     opacity: 1;
   }
 
   &::before {
-    top: $vertical-padding / 2;
+    top: $margin * $margin-ratio / 2 + $vertical-padding / 2;
   }
 
   &__line {
-    top: $size / 2;
+    top: $margin * $margin-ratio / 2 + $size / 2;
   }
 
   &::after {
-    top: $size - $vertical-padding / 2;
+    top: $margin * $margin-ratio / 2 + $size - $vertical-padding / 2;
     width: $size / 1.618;
+  }
+
+  // hover
+  &:hover {
+    background-color: $primary;
+
+    &::before,
+    &::after {
+      background-color: $white;
+    }
+  }
+
+  &:hover &__line {
+    background-color: $white;
   }
 
   // menu open
@@ -81,7 +97,7 @@ $vertical-padding: 8px;
 
     &::before,
     &::after {
-      top: $size / 2;
+      top: $margin * $margin-ratio / 2 + $size / 2;
       background-color: $white;
     }
   }
@@ -89,6 +105,20 @@ $vertical-padding: 8px;
   &--open &__line {
     opacity: 0;
     background-color: $white;
+  }
+
+  // menu open hover
+  &--open:hover {
+    background-color: $white;
+
+    &::before,
+    &::after {
+      background-color: $primary;
+    }
+  }
+
+  &--open:hover &__line {
+    background-color: $primary;
   }
 }
 </style>

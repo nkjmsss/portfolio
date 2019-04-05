@@ -1,0 +1,12 @@
+version: "3.5"
+services:
+  nuxt:
+    build: .
+    volumes:
+      - ./src:/src
+    ports:
+      - "3000:3000"
+    tty: true
+    environment:
+      HOST: "0.0.0.0"
+    command: yarn run dev

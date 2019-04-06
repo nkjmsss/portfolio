@@ -4,27 +4,39 @@
       .logo__txt nkjmsss
 
     ul.header__list.header__list--primary
-      li Works
-        ul.header__list.header__list--secondary
-          li web
-          li dtp
-          li logo
-      li About me
-      li Contact
+      li(
+        v-for="item in menu"
+        :key="item.title"
+      )
+        nuxt-link(
+          :to="item.href"
+        ) {{item.title}}
+
+        template(
+          v-if="item.children"
+        )
+          ul.header__list.header__list--secondary
+            li(
+              v-for="child in item.children"
+              :key="child.title"
+            )
+              nuxt-link(
+                :to="child.href"
+              ) {{child.title}}
 
     ul.header__list.header__list--sns
-      li
-        img(
-          src="~/assets/img/header/twitter.svg"
+      li(
+        v-for="item in sns"
+        :key="item.title"
+      )
+        a(
+          :href="item.href"
+          target="_blank"
         )
-      li
-        img(
-          src="~/assets/img/header/github.svg"
-        )
-      li
-        img(
-          src="~/assets/img/header/facebook.svg"
-        )
+          img(
+            :src="require(`~/assets/img/header/${item.title}.svg`)"
+            :alt="item.title"
+          )
 </template>
 
 <style lang="scss" scoped>
@@ -117,8 +129,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
+    width: 70%;
     max-width: 300px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: inherit;
   }
 }
 </style>
+
+<script>
+import menu from '~/assets/config/menu'
+import sns from '~/assets/config/sns'
+
+export default {
+  data: () => ({
+    menu: menu,
+    sns: sns,
+  }),
+}
+</script>

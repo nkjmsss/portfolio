@@ -24,7 +24,11 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~/assets/style/variable.scss', '~/assets/style/ress.css'],
+  css: [
+    '~/assets/style/ress.css',
+    '~/assets/style/variable.scss',
+    '~/assets/style/mixin.scss',
+  ],
 
   /*
    ** Plugins to load before mounting the App
@@ -60,6 +64,6 @@ export default {
    * sass resources
    */
   styleResources: {
-    scss: ['~/assets/style/variable.scss'],
+    scss: ['~/assets/style/variable.scss', '~/assets/style/mixin.scss'],
   },
 }

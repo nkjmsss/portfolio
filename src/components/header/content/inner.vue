@@ -32,6 +32,7 @@
         a.sns__img(
           :href="item.href"
           target="_blank"
+          :title="item.title"
         )
           img(
             :src="require(`~/assets/img/header/${item.title}.svg`)"

@@ -8,7 +8,7 @@
         v-for="item in menu"
         :key="item.title"
       )
-        nuxt-link(
+        nuxt-link.header__list__link(
           :to="item.href"
         ) {{item.title}}
 
@@ -20,7 +20,7 @@
               v-for="child in item.children"
               :key="child.title"
             )
-              nuxt-link(
+              nuxt-link.header__list__link(
                 :to="child.href"
               ) {{child.title}}
 
@@ -29,7 +29,7 @@
         v-for="item in sns"
         :key="item.title"
       )
-        a(
+        a.sns__img(
           :href="item.href"
           target="_blank"
         )
@@ -133,9 +133,27 @@
     max-width: 300px;
   }
 
-  a {
+  &__link {
+    position: relative;
     color: inherit;
     text-decoration: inherit;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -0.2em;
+      left: 0;
+      transform: scaleX(0);
+      width: 100%;
+      height: 0.1em;
+      background-color: $white;
+      transition: ease-out 0.2s;
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+    }
   }
 }
 </style>

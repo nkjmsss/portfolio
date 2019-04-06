@@ -38,6 +38,7 @@ $duration: 0.6s;
   display: flex;
   justify-content: flex-end;
   z-index: 500;
+  pointer-events: none;
 
   &__wrap {
     width: 100%;

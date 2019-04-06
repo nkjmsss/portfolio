@@ -8,7 +8,7 @@
         v-for="item in menu"
         :key="item.title"
       )
-        nuxt-link.header__list__link(
+        v-link(
           :to="item.href"
         ) {{item.title}}
 
@@ -20,7 +20,7 @@
               v-for="child in item.children"
               :key="child.title"
             )
-              nuxt-link.header__list__link(
+              v-link(
                 :to="child.href"
               ) {{child.title}}
 
@@ -35,7 +35,7 @@
           :title="item.title"
         )
           img(
-            :src="require(`~/assets/img/header/${item.title}.svg`)"
+            :src="require(`~/assets/img/icon/${item.title}.svg`)"
             :alt="item.title"
           )
 </template>
@@ -49,6 +49,7 @@
   height: 100%;
   width: 100%;
   padding: 30px 0;
+  pointer-events: auto;
 }
 
 .logo {
@@ -98,7 +99,7 @@
   &--primary {
     font-size: 24px;
 
-    li + li {
+    & > li + li {
       margin-top: 24px;
     }
 
@@ -108,7 +109,7 @@
       width: 80%;
       max-width: 500px;
 
-      li + li {
+      & > li + li {
         margin-top: 0;
       }
     }
@@ -117,11 +118,11 @@
   &--secondary {
     font-size: 16px;
 
-    li:first-of-type {
+    & > li:first-of-type {
       margin-top: 8px;
     }
 
-    li + li {
+    & > li + li {
       margin-top: 12px;
     }
   }
@@ -133,37 +134,19 @@
     width: 70%;
     max-width: 300px;
   }
-
-  &__link {
-    position: relative;
-    color: inherit;
-    text-decoration: inherit;
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -0.2em;
-      left: 0;
-      transform: scaleX(0);
-      width: 100%;
-      height: 0.1em;
-      background-color: $white;
-      transition: ease-out 0.2s;
-      transform-origin: left;
-    }
-
-    &:hover::after {
-      transform: scaleX(1);
-    }
-  }
 }
 </style>
 
 <script>
 import menu from '~/assets/config/menu'
 import sns from '~/assets/config/sns'
+import vLink from '~/components/slot/link-underline'
 
 export default {
+  components: {
+    vLink,
+  },
+
   data: () => ({
     menu: menu,
     sns: sns,

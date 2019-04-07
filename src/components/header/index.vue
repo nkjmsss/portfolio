@@ -2,7 +2,7 @@
   header
     v-hamberger(
       :isOpen="menuOpen"
-      @hambergerClick="toggleOpen"
+      @hambergerClick="toggleMenu"
     )
     v-content(
       :isOpen="menuOpen"
@@ -25,12 +25,20 @@ export default {
     menuOpen: false,
   }),
 
+  watch: {
+    async menuOpen(before) {
+      if (before) {
+        await this.$sleep(100)
+      }
+
+      this.$store.commit('setHideFrameOutside', this.menuOpen)
+    },
+  },
+
   methods: {
-    toggleOpen() {
+    toggleMenu() {
       this.menuOpen = !this.menuOpen
     },
   },
 }
 </script>
-
-<style lang="scss" scoped></style>

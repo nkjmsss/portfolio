@@ -35,6 +35,8 @@
             :src="require(`~/assets/img/icon/${item.title}.svg`)"
             :alt="item.title"
           )
+
+    .copyright ©2019 nkjmsss
 </template>
 
 <style lang="scss" scoped>
@@ -123,8 +125,14 @@ footer {
     align-items: center;
     width: 70%;
     max-width: 300px;
-    margin: 20px 0 10px;
+    margin: 20px 0 0;
   }
+}
+
+.copyright {
+  font-size: 12px;
+  line-height: 1;
+  margin: 6px 0;
 }
 </style>
 

@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  div.layput--default
     v-frame
     v-hide
     v-header
@@ -25,7 +25,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div {
+.layput--default {
   font-family: $sans;
+}
+
+main {
+  padding: $margin + 10px;
+}
+</style>
+
+<style lang="scss">
+html {
+  font-size: 14px;
+
+  @include mq {
+    font-size: 16px;
+  }
 }
 </style>

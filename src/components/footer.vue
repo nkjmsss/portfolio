@@ -55,8 +55,8 @@ footer {
   list-style-type: none;
 
   &--primary {
-    font-size: 20px;
-    margin-top: 10px;
+    font-size: 1.25rem;
+    margin-top: 0.625rem;
 
     & > li {
       &::before {
@@ -64,7 +64,7 @@ footer {
       }
 
       & + li {
-        margin-top: 16px;
+        margin-top: 1rem;
       }
     }
 
@@ -88,7 +88,7 @@ footer {
   }
 
   &--secondary {
-    font-size: 14px;
+    font-size: 0.875rem;
     display: flex;
     padding-left: 1em;
 
@@ -105,7 +105,7 @@ footer {
     @include mq {
       display: block;
       padding-left: 0;
-      margin-top: 4px;
+      margin-top: 0.25rem;
 
       & > li {
         & + li::before {
@@ -125,14 +125,20 @@ footer {
     align-items: center;
     width: 70%;
     max-width: 300px;
-    margin: 20px 0 0;
+    margin: 1.25rem 0 0;
+  }
+}
+
+.sns__img {
+  img {
+    height: 1.75rem;
   }
 }
 
 .copyright {
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 1;
-  margin: 6px 0;
+  margin: 0.5em 0;
 }
 </style>
 

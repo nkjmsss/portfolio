@@ -48,12 +48,12 @@
   justify-content: space-between;
   height: 100%;
   width: 100%;
-  padding: 30px 0;
+  padding: 1.9rem 0;
   pointer-events: auto;
 }
 
 .logo {
-  $height: 70px;
+  $height: 4.375rem;
 
   height: $height;
   position: relative;
@@ -64,7 +64,7 @@
   &__txt {
     margin-bottom: 0.1em;
     color: $white;
-    font-size: 32px;
+    font-size: 2rem;
     font-style: italic;
     line-height: 1;
   }
@@ -75,7 +75,7 @@
     position: absolute;
     left: 50%;
     display: block;
-    width: 52px;
+    width: 3.25rem;
     height: 1px;
     background-color: $white;
   }
@@ -97,10 +97,10 @@
   text-align: center;
 
   &--primary {
-    font-size: 24px;
+    font-size: 1.5rem;
 
     & > li + li {
-      margin-top: 24px;
+      margin-top: 1.5rem;
     }
 
     @include mq {
@@ -116,14 +116,14 @@
   }
 
   &--secondary {
-    font-size: 16px;
+    font-size: 1rem;
 
     & > li:first-of-type {
-      margin-top: 8px;
+      margin-top: 0.5rem;
     }
 
     & > li + li {
-      margin-top: 12px;
+      margin-top: 0.75rem;
     }
   }
 
@@ -133,6 +133,12 @@
     align-items: center;
     width: 70%;
     max-width: 300px;
+  }
+}
+
+.sns__img {
+  img {
+    height: 2rem;
   }
 }
 </style>

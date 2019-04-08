@@ -28,14 +28,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-p {
-  text-align: justify;
-
-  & + & {
-    margin-top: 0.5em;
-  }
-}
-
 @include mq {
   .flex-md {
     display: flex;

@@ -48,4 +48,12 @@ html {
     font-size: 16px;
   }
 }
+
+p {
+  text-align: justify;
+
+  & + & {
+    margin-top: 0.5em;
+  }
+}
 </style>

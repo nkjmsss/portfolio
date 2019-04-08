@@ -15,7 +15,7 @@ export default {
   left: 0;
   width: 100vw;
   height: 100vh;
-  padding: $margin;
+  border: $margin solid rgba($color: $white, $alpha: 0.6);
   pointer-events: none;
   z-index: 100;
 

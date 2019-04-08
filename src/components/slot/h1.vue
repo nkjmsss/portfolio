@@ -9,5 +9,6 @@ h1 {
   color: $primary;
   text-decoration: underline;
   text-align: center;
+  margin-bottom: 1em;
 }
 </style>

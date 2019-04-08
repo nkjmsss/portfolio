@@ -31,7 +31,7 @@ export default {
 }
 
 main {
-  padding: $margin + 10px;
+  padding: #{$margin + 32px} #{$margin + 16px};
 }
 </style>
 

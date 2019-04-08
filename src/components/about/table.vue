@@ -44,6 +44,10 @@ export default {
     width: 70px;
     vertical-align: top;
     text-align: right;
+
+    @include mq {
+      width: 100px;
+    }
   }
 
   &__item {

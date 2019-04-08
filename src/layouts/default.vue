@@ -4,7 +4,7 @@
     v-hide
     v-header
     main
-      nuxt
+      nuxt.container
     v-footer
 </template>
 
@@ -32,6 +32,11 @@ export default {
 
 main {
   padding: #{$margin + 32px} #{$margin + 16px};
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
 }
 </style>
 

@@ -3,10 +3,9 @@
     v-image
     .profile__text
       .profile__text__name Sota Nakajima
-      .profile__text__twitter
-        v-link(
-          :to="twitter"
-        ) @nkjmsss
+      v-link.profile__text__twitter(
+        :to="twitter"
+      ) @nkjmsss
 </template>
 
 <script>
@@ -33,12 +32,18 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 3rem 0 2rem;
+
+  @include mq {
+    margin: 0;
+  }
 
   &__text {
     text-align: center;
 
     &__name {
       font-size: 1.2rem;
+      margin-top: 0.2em;
     }
 
     &__twitter {

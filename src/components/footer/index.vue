@@ -59,12 +59,10 @@ footer {
     margin-top: 0.625rem;
 
     & > li {
-      &::before {
-        content: '- ';
-      }
+      line-height: 1;
 
       & + li {
-        margin-top: 1rem;
+        margin-top: 1.4rem;
       }
     }
 
@@ -76,10 +74,6 @@ footer {
       text-align: center;
 
       & > li {
-        &::before {
-          content: normal;
-        }
-
         & + li {
           margin-top: 0;
         }
@@ -91,10 +85,18 @@ footer {
     font-size: 0.875rem;
     display: flex;
     padding-left: 1em;
+    margin-top: 0.3rem;
 
     & > li {
+      display: flex;
+      align-items: center;
+
       & + li::before {
-        content: '|';
+        content: '';
+        display: inline-block;
+        height: 1em;
+        width: 1px;
+        background-color: currentColor;
       }
 
       & > a {
@@ -108,6 +110,8 @@ footer {
       margin-top: 0.25rem;
 
       & > li {
+        display: list-item;
+
         & + li::before {
           content: normal;
         }
@@ -125,7 +129,7 @@ footer {
     align-items: center;
     width: 70%;
     max-width: 300px;
-    margin: 1.25rem 0 0;
+    margin: 0.75rem 0 0;
   }
 }
 

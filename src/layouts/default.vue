@@ -27,6 +27,7 @@ export default {
 <style lang="scss" scoped>
 .layput--default {
   font-family: $sans;
+  color: $black;
 }
 
 main {

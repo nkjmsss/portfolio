@@ -29,7 +29,7 @@ $vertical-padding: 8px;
 $margin-ratio: 3;
 
 .hamberger {
-  position: absolute;
+  position: fixed;
   top: $margin;
   right: $margin;
   width: $size + $margin * $margin-ratio;

@@ -19,24 +19,28 @@ export default {
 <style lang="scss" scoped>
 .link--underline {
   position: relative;
+  display: inline-block;
+  height: 1.2em;
+  line-height: 1;
   color: inherit;
   text-decoration: inherit;
+  overflow: hidden;
 
   &::after {
     content: '';
     position: absolute;
-    bottom: -0.2em;
+    bottom: 0;
     left: 0;
-    transform: scaleX(0);
+    transform: translateX(-110%);
     width: 100%;
     height: 0.1em;
-    background-color: $white;
+    background-color: currentColor;
     transition: ease-out 0.2s;
     transform-origin: left;
   }
 
   &:hover::after {
-    transform: scaleX(1);
+    transform: translateX(0);
   }
 }
 </style>

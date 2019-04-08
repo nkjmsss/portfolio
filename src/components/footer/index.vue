@@ -111,6 +111,7 @@ footer {
 
       & > li {
         display: list-item;
+        margin-top: 0.5em;
 
         & + li::before {
           content: normal;

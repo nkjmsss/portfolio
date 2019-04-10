@@ -1,8 +1,6 @@
 <template lang="pug">
   form.form(
-    action="https://docs.google.com/forms/d/e/1FAIpQLSekoZiJGtqNFuj89gIjXdSmslmTI2sOK90G2AwJumHJgvSWbQ/formResponse"
-    target="_self"
-    method="POST"
+    @submit.prevent="submitForm"
   )
     .form__group
       label.form__label(
@@ -10,7 +8,7 @@
       ) お名前
       input.form__input#name(
         type="text"
-        name="entry.27695556"
+        name="name"
         v-model="name"
         required
       )
@@ -21,7 +19,7 @@
       ) メールアドレス
       input.form__input#email(
         type="email"
-        name="entry.407788058"
+        name="email"
         v-model="email"
         required
       )
@@ -31,7 +29,7 @@
         for="content"
       ) お問い合わせ内容
       textarea.form__input#content(
-        name="entry.1872465814"
+        name="content"
         v-model="content"
         required
       )
@@ -47,14 +45,15 @@ export default {
   name: 'VForm',
 
   data: () => ({
-    name: '',
-    email: '',
-    content: '',
+    name: 'name',
+    email: 'sample@sample.com',
+    content: 'content',
   }),
 
   methods: {
     submitForm() {
-      return false
+      // eslint-disable-next-line
+      console.log('POST') // TODO
     },
   },
 }

@@ -1,12 +1,7 @@
 <template lang="pug">
   header
-    v-hamberger(
-      :isOpen="menuOpen"
-      @hambergerClick="toggleMenu"
-    )
-    v-content(
-      :isOpen="menuOpen"
-    )
+    v-hamberger
+    v-content
 </template>
 
 <script>
@@ -21,10 +16,6 @@ export default {
     vContent,
   },
 
-  data: () => ({
-    menuOpen: false,
-  }),
-
   watch: {
     async menuOpen(before) {
       if (before) {
@@ -32,12 +23,6 @@ export default {
       }
 
       this.$store.commit('setHideFrameOutside', this.menuOpen)
-    },
-  },
-
-  methods: {
-    toggleMenu() {
-      this.menuOpen = !this.menuOpen
     },
   },
 }

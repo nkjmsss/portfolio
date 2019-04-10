@@ -14,10 +14,10 @@ export default {
   components: {
     headerInner,
   },
-  props: {
-    isOpen: {
-      type: Boolean,
-      required: true,
+
+  computed: {
+    isOpen() {
+      return this.$store.state.menuOpen
     },
   },
 }

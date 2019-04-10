@@ -9,15 +9,14 @@
 <script>
 export default {
   name: 'Hamberger',
-  props: {
-    isOpen: {
-      type: Boolean,
-      required: true,
+  computed: {
+    isOpen() {
+      return this.$store.state.menuOpen
     },
   },
   methods: {
     emitHambergerClick() {
-      this.$emit('hambergerClick')
+      this.$store.commit('setMenuOpen', !this.isOpen)
     },
   },
 }

@@ -33,7 +33,13 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/sleep'],
+  plugins: [
+    '~/plugins/sleep',
+    {
+      src: '~/plugins/routerOption',
+      ssr: false,
+    },
+  ],
 
   /*
    ** Nuxt.js modules

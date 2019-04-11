@@ -1,5 +1,12 @@
 import { $sleep } from '~/plugins/sleep'
 
+const scrollable = bool => {
+  const v = bool ? 'auto' : 'hidden'
+
+  document.documentElement.style.overflow = v
+  document.body.style.overflow = v
+}
+
 export default ({ store }) => {
   // watch menuOpen
   store.watch(
@@ -17,15 +24,10 @@ export default ({ store }) => {
 
         // disable background scroll
         () => {
-          const setOverflow = v => {
-            document.documentElement.style.overflow = v
-            document.body.style.overflow = v
-          }
-
           if (newValue) {
-            setOverflow('hidden')
+            scrollable(false)
           } else {
-            setOverflow('auto')
+            scrollable(true)
           }
         },
       ].forEach(fn => {

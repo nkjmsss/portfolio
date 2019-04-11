@@ -3,14 +3,10 @@
 </template>
 
 <script>
-// simulating long loading page
-// TODO
-import { $sleep } from '~/plugins/sleep'
+// import load from '~/plugins/longLoading'
 
 export default {
-  async fetch() {
-    await $sleep(2000)
-  },
+  // mixins: [load],
 }
 </script>
 

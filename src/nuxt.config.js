@@ -39,6 +39,10 @@ export default {
       src: '~/plugins/routerOption',
       ssr: false,
     },
+    {
+      src: '~/plugins/vuexWatcher',
+      ssr: false,
+    },
   ],
 
   /*

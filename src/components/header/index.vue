@@ -15,15 +15,5 @@ export default {
     vHamberger,
     vContent,
   },
-
-  watch: {
-    async menuOpen(before) {
-      if (before) {
-        await this.$sleep(100)
-      }
-
-      this.$store.commit('setHideFrameOutside', this.menuOpen)
-    },
-  },
 }
 </script>

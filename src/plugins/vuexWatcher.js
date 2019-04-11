@@ -14,6 +14,20 @@ export default ({ store }) => {
 
           store.commit('setHideFrameOutside', newValue)
         },
+
+        // disable background scroll
+        () => {
+          const setOverflow = v => {
+            document.documentElement.style.overflow = v
+            document.body.style.overflow = v
+          }
+
+          if (newValue) {
+            setOverflow('hidden')
+          } else {
+            setOverflow('auto')
+          }
+        },
       ].forEach(fn => {
         fn()
       })

@@ -35,6 +35,7 @@ $duration: 0.6s;
   padding: $margin;
   transform-style: preserve-3d;
   perspective: 200vw;
+  perspective-origin: 50% 50%;
   display: flex;
   justify-content: flex-end;
   z-index: 500;
@@ -44,6 +45,8 @@ $duration: 0.6s;
     width: 100%;
     height: 100%;
     overflow: hidden;
+    perspective: inherit;
+    perspective-origin: inherit;
   }
 
   &__inner {

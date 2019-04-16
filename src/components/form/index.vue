@@ -55,7 +55,6 @@ export default {
 
   methods: {
     submitForm() {
-      // eslint-disable-next-line
       console.log('POST') // TODO
     },
   },

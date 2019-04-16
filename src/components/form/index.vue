@@ -10,6 +10,7 @@
         type="text"
         name="name"
         v-model="name"
+        placeholder="山田 太郎"
         required
       )
 
@@ -21,6 +22,7 @@
         type="email"
         name="email"
         v-model="email"
+        placeholder="sample@gmail.com"
         required
       )
 
@@ -31,6 +33,7 @@
       textarea.form__input#content(
         name="content"
         v-model="content"
+        placeholder="制作のご依頼・ご相談などを自由にお書きください。"
         required
       )
 

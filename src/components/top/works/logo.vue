@@ -1,10 +1,10 @@
 <template lang="pug">
-  div.work--web {{item.name}}
+  div.work--logo {{item.name}}
 </template>
 
 <script>
 export default {
-  name: 'WebWork',
+  name: 'LogoWork',
   props: {
     item: {
       type: Object,

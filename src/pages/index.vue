@@ -33,6 +33,22 @@ export default {
         type: 'web',
         name: 'sample2',
       },
+      {
+        type: 'dtp',
+        name: 'sample1',
+      },
+      {
+        type: 'dtp',
+        name: 'sample2',
+      },
+      {
+        type: 'logo',
+        name: 'sample1',
+      },
+      {
+        type: 'logo',
+        name: 'sample2',
+      },
     ],
   }),
 }

@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import webContainer from './web.vue'
-import dtpContainer from './dtp.vue'
-import logoContainer from './logo.vue'
 
 export default Vue.component('works', {
   functional: true,
@@ -16,8 +14,8 @@ export default Vue.component('works', {
       const item = context.props.item
       const component = {
         web: webContainer,
-        dtp: dtpContainer,
-        logo: logoContainer,
+        dtp: webContainer, // TODO
+        logo: webContainer, // TODO
       }[item.type]
 
       if (!component) {

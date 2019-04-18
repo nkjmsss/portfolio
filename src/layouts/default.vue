@@ -26,11 +26,12 @@ export default {
 
 <style lang="scss" scoped>
 .layput--default {
-  font-family: $sans;
   color: $black;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  @include font;
 }
 
 main {

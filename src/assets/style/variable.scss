@@ -8,4 +8,11 @@ $white: #fff;
 $margin: 10px;
 
 // font
-$sans: futura meiryo sans-serif; // TODO
+@mixin font {
+  font-family: futura-pt, fot-cezanne-pron, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-kerning: normal;
+  font-feature-settings: "pkna", "kern";
+  line-height: 1.5;
+}

@@ -7,6 +7,8 @@
 
 <style lang="scss" scoped>
 .hero {
+  @include font-en;
+
   &__title {
     text-align: center;
     line-height: 1;

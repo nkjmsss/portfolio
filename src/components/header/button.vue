@@ -52,7 +52,8 @@ $margin-ratio: 3;
     position: absolute;
     right: $margin * $margin-ratio / 2;
     transform: translateY(-50%);
-    transition: background-color ease-out 0.2s, ease-out 0.5s;
+    transition: all ease-out 0.5s, background-color ease-out 0.2s,
+      opacity ease-out 0.3s;
     opacity: 1;
   }
 

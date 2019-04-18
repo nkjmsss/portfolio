@@ -8,8 +8,17 @@ $white: #fff;
 $margin: 10px;
 
 // font
-@mixin font {
-  font-family: futura-pt, fot-cezanne-pron, sans-serif;
+@mixin font-jp {
+  font-family: fot-cezanne-pron, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", "verdana", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-kerning: normal;
+  font-feature-settings: "pkna", "kern";
+  line-height: 1.5;
+}
+
+@mixin font-en {
+  font-family: futura-pt, futura, "verdana", sans-serif;
   font-style: normal;
   font-weight: 300;
   font-kerning: normal;

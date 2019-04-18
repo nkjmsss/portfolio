@@ -10,5 +10,7 @@ h1 {
   text-decoration: underline;
   text-align: center;
   margin-bottom: 1em;
+
+  @include font-en;
 }
 </style>

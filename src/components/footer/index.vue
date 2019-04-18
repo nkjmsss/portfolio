@@ -50,6 +50,8 @@ footer {
   flex-direction: column;
   align-items: center;
   margin-top: auto;
+
+  @include font-en;
 }
 
 .footer__list {

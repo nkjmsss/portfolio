@@ -25,6 +25,7 @@ export default {
   color: inherit;
   text-decoration: inherit;
   overflow: hidden;
+  font-family: inherit;
 
   &::after {
     content: '';

@@ -10,6 +10,7 @@
       )
         v-link(
           :to="item.href"
+          :tabindex="tabIndex"
         ) {{item.title}}
 
         template(
@@ -22,6 +23,7 @@
             )
               v-link(
                 :to="child.href"
+                :tabindex="tabIndex"
               ) {{child.title}}
 
     ul.header__list.header__list--sns
@@ -33,6 +35,7 @@
           :href="item.href"
           target="_blank"
           :title="item.title"
+          :tabindex="tabIndex"
         )
           img(
             :src="require(`~/assets/img/icon/${item.title}.svg`)"
@@ -157,5 +160,15 @@ export default {
     menu: menu,
     sns: sns,
   }),
+
+  computed: {
+    isOpen() {
+      return this.$store.state.menuOpen
+    },
+
+    tabIndex() {
+      return this.isOpen ? 0 : -1
+    },
+  },
 }
 </script>

@@ -40,8 +40,11 @@ export default {
     transform-origin: left;
   }
 
-  &:hover::after {
-    transform: translateX(0);
+  &:hover,
+  &:focus {
+    &::after {
+      transform: translateX(0);
+    }
   }
 }
 </style>

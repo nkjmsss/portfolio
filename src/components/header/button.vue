@@ -1,7 +1,9 @@
 <template lang="pug">
   .hamberger(
     :class="{'hamberger--open': isOpen}"
-    @click="emitHambergerClick"
+    @click="handleClick"
+    @keydown.enter="handleClick"
+    tabindex="0"
   )
     span.hamberger__line
 </template>
@@ -15,8 +17,12 @@ export default {
     },
   },
   methods: {
-    emitHambergerClick() {
+    handleClick(e) {
+      // emit event
       this.$store.commit('setMenuOpen', !this.isOpen)
+
+      // focus out
+      e.target.blur()
     },
   },
 }
@@ -70,9 +76,11 @@ $margin-ratio: 3;
     width: $size / 1.618;
   }
 
-  // hover
-  &:hover {
+  // hover, focus
+  &:hover,
+  &:focus {
     background-color: $primary;
+    outline: none;
 
     &::before,
     &::after {
@@ -80,7 +88,8 @@ $margin-ratio: 3;
     }
   }
 
-  &:hover &__line {
+  &:hover &__line,
+  &:focus &__line {
     background-color: $white;
   }
 
@@ -107,8 +116,9 @@ $margin-ratio: 3;
     background-color: $white;
   }
 
-  // menu open hover
-  &--open:hover {
+  // menu open hover, focus
+  &--open:hover,
+  &--open:focus {
     background-color: $white;
 
     &::before,
@@ -117,7 +127,8 @@ $margin-ratio: 3;
     }
   }
 
-  &--open:hover &__line {
+  &--open:hover &__line,
+  &--open:focus &__line {
     background-color: $primary;
   }
 }

@@ -20,5 +20,6 @@ module.exports = {
   // add your custom rules here
   rules: {
     'no-console': 1,
+    'no-unused-vars': 1,
   }
 }

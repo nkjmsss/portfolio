@@ -7,6 +7,7 @@
 <script>
 import vHamberger from './button'
 import vContent from './content'
+import { tabTrapEnable, tabTrapDisable } from '~/mixins/tabTrapping'
 
 export default {
   name: 'VHeader',
@@ -14,6 +15,25 @@ export default {
   components: {
     vHamberger,
     vContent,
+  },
+
+  computed: {
+    isOpen() {
+      return this.$store.state.menuOpen
+    },
+  },
+
+  watch: {
+    isOpen: {
+      handler(newval) {
+        if (newval) {
+          tabTrapEnable(this.$el)
+        } else {
+          tabTrapDisable()
+        }
+      },
+      imidiate: true,
+    },
   },
 }
 </script>

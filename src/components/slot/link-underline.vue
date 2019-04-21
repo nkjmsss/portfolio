@@ -1,6 +1,8 @@
 <template lang="pug">
   nuxt-link.link--underline(
     :to="to"
+    exact
+    :tabIndex="tabIndex"
   )
     slot
 </template>
@@ -11,6 +13,37 @@ export default {
     to: {
       type: String,
       required: true,
+    },
+  },
+
+  data: () => ({
+    classList: [],
+  }),
+
+  computed: {
+    isActive() {
+      return this.classList.findIndex(v => v === 'nuxt-link-active') >= 0
+    },
+
+    tabIndex() {
+      return this.isActive ? -1 : 0
+    },
+  },
+
+  watch: {
+    $route: {
+      handler() {
+        this.setClassList()
+      },
+      immediate: true,
+    },
+  },
+
+  methods: {
+    setClassList() {
+      this.$nextTick(function() {
+        this.classList = [].slice.call(this.$el.classList)
+      })
     },
   },
 }
@@ -40,10 +73,23 @@ export default {
     transform-origin: left;
   }
 
-  &:hover,
-  &:focus {
+  &:not(.nuxt-link-active) {
+    &:hover,
+    &:focus {
+      &::after {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  // active link
+  &.nuxt-link-active {
+    cursor: initial;
+
     &::after {
-      transform: translateX(0);
+      width: 30%;
+      transform: translateX(-50%);
+      left: 50%;
     }
   }
 }

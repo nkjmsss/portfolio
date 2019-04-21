@@ -1,11 +1,9 @@
 <template lang="pug">
   .profile
     v-image
-    .profile__text
-      .profile__text__name Sota Nakajima
-      v-link.profile__text__twitter(
-        :to="twitter"
-      ) @nkjmsss
+    .profile__name
+      span.profile__name--jp 中島 創太
+      small.profile__name--en Sota Nakajima
 </template>
 
 <script>
@@ -38,15 +36,19 @@ export default {
     margin: 0;
   }
 
-  &__text {
-    text-align: center;
+  &__name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+    margin-top: 10px;
 
-    &__name {
+    &--jp {
       font-size: 1.2rem;
-      margin-top: 0.2em;
+      margin-bottom: 8px;
     }
 
-    &__twitter {
+    &--en {
       font-size: 0.9rem;
       color: $gray;
     }

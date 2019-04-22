@@ -1,10 +1,5 @@
 <template lang="pug">
   .works__container
-    // v-work(
-    //   v-for="item in items"
-    //   :key="item.name"
-    //   :item="item"
-    // )
     template(
       v-for="pattern in itemsSeparate"
     )
@@ -78,8 +73,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.works__container__row {
-  display: flex;
-  justify-content: space-around;
+.works__container {
+  &__row {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 </style>

@@ -4,7 +4,7 @@
     v-header
     // z-indexの問題があるため、別個にトランジションさせる
     main.container.fade(
-      :class="{hide}"
+      :class="[{hide}, {'ma-w': setMaxWidth}]"
     )
       nuxt
     v-footer.fade(
@@ -28,6 +28,10 @@ export default {
     hide() {
       return this.$store.state.hideContent
     },
+
+    setMaxWidth() {
+      return this.$route.path !== '/'
+    },
   },
 }
 </script>
@@ -44,24 +48,17 @@ export default {
 
 main.container {
   padding: #{$margin + 32px} #{$margin + 16px};
-  max-width: 800px;
   width: 100%;
   margin: 0 auto;
 
   @include mq(lg) {
     padding: #{$margin-pc + 32px} #{$margin-pc + 16px};
   }
-}
 
-// fade transition settings
-// .fade-enter-active,
-// .fade-leave-active {
-//   transition: opacity 0.4s ease-out;
-// }
-// .fade-enter,
-// .fade-leave-to {
-//   opacity: 0;
-// }
+  &.ma-w {
+    max-width: 800px;
+  }
+}
 
 .fade {
   transition: 0.4s ease-out;

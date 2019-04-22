@@ -4,6 +4,7 @@ services:
     build: .
     volumes:
       - ./src:/src
+      - ./firebase:/firebase
     ports:
       - "3000:3000"
     tty: true

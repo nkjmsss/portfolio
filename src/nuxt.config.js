@@ -48,6 +48,7 @@ export default {
       src: '~/plugins/vuexWatcher',
       ssr: false,
     },
+    '~/plugins/firebase',
   ],
 
   /*

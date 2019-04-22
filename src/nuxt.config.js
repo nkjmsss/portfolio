@@ -32,7 +32,7 @@ export default {
     ],
     script: [
       {
-        src: '/js/typekit.js',
+        src: '/typekit.js',
       },
     ],
     link: [

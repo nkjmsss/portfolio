@@ -55,7 +55,8 @@ footer {
   @include font-en;
 
   @include mq(lg) {
-    padding: $margin $margin-pc;
+    padding: $margin-pc;
+    padding: $margin;
   }
 }
 
@@ -63,7 +64,7 @@ footer {
   list-style-type: none;
 
   &--primary {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     margin-top: 0.625rem;
 
     & > li {
@@ -90,7 +91,7 @@ footer {
   }
 
   &--secondary {
-    font-size: 0.875rem;
+    font-size: 1rem;
     display: flex;
     padding-left: 1em;
     margin-top: 0.3rem;

@@ -1,10 +1,38 @@
 <template lang="pug">
-  .frame
+  .frame(
+    :style="style"
+  )
 </template>
 
 <script>
 export default {
   name: 'VFrame',
+
+  data: () => ({
+    height: 0,
+    width: 0,
+  }),
+
+  computed: {
+    style() {
+      return {
+        height: `${this.height}px`,
+        width: `${this.width}px`,
+      }
+    },
+  },
+
+  mounted() {
+    this.setWindowSize()
+    window.addEventListener('resize', this.setWindowSize)
+  },
+
+  methods: {
+    setWindowSize() {
+      this.height = window.innerHeight
+      this.width = window.innerWidth
+    },
+  },
 }
 </script>
 

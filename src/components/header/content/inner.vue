@@ -34,6 +34,7 @@
         a.sns__img(
           :href="item.href"
           target="_blank"
+          rel="noopener"
           :title="item.title"
           :tabindex="tabIndex"
         )

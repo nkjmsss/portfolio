@@ -25,7 +25,7 @@ export default {
   &__title {
     text-align: center;
     line-height: 1;
-    padding: 4rem 0;
+    padding: 7rem 0;
 
     &__sub {
       font-size: 1.5rem;

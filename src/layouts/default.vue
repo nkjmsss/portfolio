@@ -1,25 +1,33 @@
 <template lang="pug">
   div.layput--default
     v-frame
-    v-hide
     v-header
-    main
-      nuxt.container
-    v-footer
+    // z-indexの問題があるため、別個にトランジションさせる
+    main.container.fade(
+      :class="{hide}"
+    )
+      nuxt
+    v-footer.fade(
+      :class="{hide}"
+    )
 </template>
 
 <script>
 import vFrame from '~/components/frame'
-import vHide from '~/components/hideContents'
 import vHeader from '~/components/header'
 import vFooter from '~/components/footer'
 
 export default {
   components: {
     vFrame,
-    vHide,
     vHeader,
     vFooter,
+  },
+
+  computed: {
+    hide() {
+      return this.$store.state.hideContent
+    },
   },
 }
 </script>
@@ -36,11 +44,31 @@ export default {
 
 main {
   padding: #{$margin + 32px} #{$margin + 16px};
+
+  &.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
+// fade transition settings
+// .fade-enter-active,
+// .fade-leave-active {
+//   transition: opacity 0.4s ease-out;
+// }
+// .fade-enter,
+// .fade-leave-to {
+//   opacity: 0;
+// }
+
+.fade {
+  transition: 0.4s ease-out;
+  opacity: 1;
+
+  &.hide {
+    opacity: 0;
+  }
 }
 </style>
 

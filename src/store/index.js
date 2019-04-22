@@ -1,11 +1,11 @@
 export const state = () => ({
-  hideFrameOutside: false,
+  hideContent: false,
   menuOpen: false,
 })
 
 export const mutations = {
-  setHideFrameOutside(state, bool) {
-    state.hideFrameOutside = bool
+  sethideContent(state, bool) {
+    state.hideContent = bool
   },
 
   setMenuOpen(state, bool) {

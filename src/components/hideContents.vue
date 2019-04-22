@@ -11,7 +11,7 @@
 export default {
   computed: {
     show() {
-      return this.$store.state.hideFrameOutside
+      return this.$store.state.hideContent
     },
   },
 }

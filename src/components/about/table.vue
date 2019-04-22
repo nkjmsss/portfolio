@@ -15,6 +15,7 @@
           ul.table-list
             li.table-list__item Docker
             li.table-list__item Git
+            li.table-list__item Firebase
       tr.table__row
         th.table__heading 制作ソフト
         td.table__item

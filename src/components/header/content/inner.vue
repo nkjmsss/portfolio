@@ -1,7 +1,8 @@
 <template lang="pug">
   nav.nav
-    .logo
-      .logo__txt nkjmsss
+    v-logo(
+      color="white"
+    )
 
     ul.header__list.header__list--primary
       li(
@@ -54,45 +55,6 @@
   width: 100%;
   padding: 1.9rem 0;
   pointer-events: auto;
-}
-
-.logo {
-  $height: 4.375rem;
-
-  height: $height;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &__txt {
-    margin-bottom: 0.1em;
-    color: $white;
-    font-size: 2rem;
-    font-style: italic;
-    line-height: 1;
-  }
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    display: block;
-    width: 3.25rem;
-    height: 1px;
-    background-color: $white;
-  }
-
-  &::before {
-    top: 0;
-    transform: translate(-50%, 100%);
-  }
-
-  &::after {
-    bottom: 0;
-    transform: translate(-50%, -100%);
-  }
 }
 
 .header__list {
@@ -151,10 +113,12 @@
 import menu from '~/assets/config/menu'
 import sns from '~/assets/config/sns'
 import vLink from '~/components/slot/link-underline'
+import vLogo from '~/components/logo'
 
 export default {
   components: {
     vLink,
+    vLogo,
   },
 
   data: () => ({

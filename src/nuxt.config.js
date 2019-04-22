@@ -55,7 +55,17 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/pwa', '@nuxtjs/style-resources', '@nuxtjs/axios'],
+  modules: [
+    '@nuxtjs/pwa',
+    '@nuxtjs/style-resources',
+    '@nuxtjs/axios',
+    [
+      '@nuxtjs/google-analytics',
+      {
+        dev: false,
+      },
+    ],
+  ],
 
   /*
    ** Build configuration
@@ -82,5 +92,12 @@ export default {
    */
   styleResources: {
     scss: ['~/assets/style/variable.scss', '~/assets/style/mixin.scss'],
+  },
+
+  /**
+   * google analytics
+   */
+  googleAnalytics: {
+    id: 'UA-138695918-1',
   },
 }

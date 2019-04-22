@@ -41,6 +41,10 @@ $duration: 0.6s;
   z-index: 500;
   pointer-events: none;
 
+  @include mq(lg) {
+    padding: $margin-pc;
+  }
+
   &__wrap {
     width: 100%;
     height: 100%;

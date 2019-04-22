@@ -42,13 +42,14 @@ export default {
   @include font-jp;
 }
 
-main {
+main.container {
   padding: #{$margin + 32px} #{$margin + 16px};
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
 
-  &.container {
-    max-width: 800px;
-    width: 100%;
-    margin: 0 auto;
+  @include mq(lg) {
+    padding: #{$margin-pc + 32px} #{$margin-pc + 16px};
   }
 }
 

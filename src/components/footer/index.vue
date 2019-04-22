@@ -53,6 +53,10 @@ footer {
   margin-top: auto;
 
   @include font-en;
+
+  @include mq(lg) {
+    padding: $margin $margin-pc;
+  }
 }
 
 .footer__list {

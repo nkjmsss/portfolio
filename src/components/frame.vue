@@ -15,7 +15,7 @@ export default {
   left: 0;
   width: 100vw;
   height: 100vh;
-  border: $margin solid rgba($color: $white, $alpha: 0.6);
+  border: $margin solid rgba($color: $white, $alpha: 0.4);
   pointer-events: none;
   z-index: 100;
 
@@ -25,6 +25,10 @@ export default {
     border: 3px solid $primary;
     width: 100%;
     height: 100%;
+  }
+
+  @include mq(lg) {
+    border-width: $margin-pc;
   }
 }
 </style>

@@ -43,6 +43,11 @@ $margin-ratio: 3;
   z-index: 10000;
   transition: ease-out 0.2s;
 
+  @include mq(lg) {
+    top: $margin-pc;
+    right: $margin-pc;
+  }
+
   &::before,
   &::after {
     content: '';

@@ -23,6 +23,6 @@ export default [
   },
   {
     title: 'Contact',
-    href: 'contact',
+    href: '/contact',
   },
 ]

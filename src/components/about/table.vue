@@ -4,12 +4,11 @@
       tr.table__row
         th.table__heading 連絡先
         td.table__item
-          ul.table-list
-            li.table-list__item
-              nuxt-link.table-list__item--link(
-                to="/contact"
-              ) こちらのフォーム
-              | よりご連絡ください。
+          p.table-paragraph
+            nuxt-link.table-list__item--link(
+              to="/contact"
+            ) こちらのフォーム
+            | よりご連絡ください。
       tr.table__row
         th.table__heading メイン言語
         td.table__item
@@ -66,6 +65,10 @@ export default {
   &__item {
     padding-left: 1em;
   }
+}
+
+.table-paragraph {
+  padding-left: 0.3em;
 }
 
 .table-list {

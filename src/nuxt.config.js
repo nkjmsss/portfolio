@@ -49,6 +49,7 @@ export default {
       ssr: false,
     },
     '~/plugins/firebase',
+    '~/plugins/uuid',
   ],
 
   /*

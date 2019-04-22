@@ -11,4 +11,4 @@ $ make init
 $ docker-compose up -d
 ```
 
-すると、[localhost](http://localhost:3000)で起動します。
+すると、[localhost:3000](http://localhost:3000)で起動します。

@@ -75,6 +75,16 @@ export default {
         property: 'og:image:height',
         content: 630,
       },
+      {
+        hid: 'twitter:card',
+        property: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        hid: 'twitter:site',
+        property: 'twitter:site',
+        content: '@nkjmsss',
+      },
     ],
     script: [
       {

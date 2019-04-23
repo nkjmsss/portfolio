@@ -3,6 +3,7 @@
     tabindex="0"
     :class="{'work--active': hover}"
     @click="handleClick"
+    :style="{width: containerWidth}"
   )
 
     svg.work__imageContainer(
@@ -48,6 +49,10 @@ export default {
       type: Object,
       required: true,
     },
+    maxRowCount: {
+      type: Number,
+      required: true,
+    },
   },
 
   data: () => ({
@@ -57,6 +62,10 @@ export default {
   computed: {
     uuid() {
       return this.$uuid
+    },
+
+    containerWidth() {
+      return `${70 / this.maxRowCount}%`
     },
   },
 
@@ -72,9 +81,13 @@ export default {
 $duration: 0.5s;
 
 .work {
-  max-width: 400px;
+  max-width: 500px;
   outline: none;
   margin: 40px 0;
+
+  @media screen and (max-width: 768px) {
+    width: 100% !important;
+  }
 
   &__imageContainer {
     width: 100%;

@@ -8,6 +8,10 @@ export default Vue.component('works', {
       type: Object,
       required: true,
     },
+    maxRowCount: {
+      type: Number,
+      required: true,
+    },
   },
   render: function(createElement, context) {
     function wrapperType() {

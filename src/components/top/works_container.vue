@@ -10,6 +10,7 @@
           v-for="item in row"
           :key="item.name"
           :item="item"
+          :maxRowCount="pattenMax"
         )
 </template>
 
@@ -32,11 +33,20 @@ export default {
 
   computed: {
     pattern() {
-      return [1, 2]
+      return [2, 1]
     },
 
     patternSum() {
       return this.sum(this.pattern)
+    },
+
+    pattenMax() {
+      return this.pattern.reduce((acc, cur) => {
+        if (acc > cur) {
+          return acc
+        }
+        return cur
+      }, 0)
     },
 
     itemsSeparate() {

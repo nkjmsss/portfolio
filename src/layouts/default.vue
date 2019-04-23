@@ -10,18 +10,21 @@
     v-footer.fade(
       :class="{hide}"
     )
+    v-loading
 </template>
 
 <script>
 import vFrame from '~/components/frame'
 import vHeader from '~/components/header'
 import vFooter from '~/components/footer'
+import vLoading from '~/components/loading'
 
 export default {
   components: {
     vFrame,
     vHeader,
     vFooter,
+    vLoading,
   },
 
   computed: {

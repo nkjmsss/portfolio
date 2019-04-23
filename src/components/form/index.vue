@@ -57,8 +57,9 @@ export default {
 
   methods: {
     submitForm() {
-      const colref = firebase.firestore().collection('contact')
+      this.$store.commit('setLoading', true)
 
+      const colref = firebase.firestore().collection('contact')
       const data = {
         name: this.name,
         email: this.email,
@@ -68,7 +69,7 @@ export default {
       colref
         .add(data)
         .then(doc => {
-          console.log(doc)
+          this.$store.commit('setLoading', false)
         })
         .catch(err => {
           console.error(err)
@@ -131,6 +132,7 @@ export default {
     width: $width;
     text-align: center;
     position: relative;
+    outline: none;
 
     &::before,
     &::after {

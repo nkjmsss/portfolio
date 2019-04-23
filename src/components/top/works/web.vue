@@ -2,8 +2,9 @@
   .work.work--web(
     tabindex="0"
     :class="{'work--active': hover}"
+    @click="handleClick"
   )
-    svg.work__inner(
+    svg.work__imageContainer(
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 263.11 212.37"
@@ -21,7 +22,7 @@
         @mouseleave="hover = false"
       )
       image.work__img(
-        xlink:href="~/assets/img/works/web/KF69_nc.jpg"
+        :xlink:href="require(`~/assets/img/works${item.image}`)"
         :clip-path="`url(#${pathID})`"
         preserveAspectRatio="xMidYMid slice"
       )
@@ -47,6 +48,12 @@ export default {
       return `cp-${this.$uuid}`
     },
   },
+
+  methods: {
+    handleClick(e) {
+      this.$el.blur()
+    },
+  },
 }
 </script>
 
@@ -57,7 +64,7 @@ $duration: 0.5s;
   max-width: 300px;
   outline: none;
 
-  &__inner {
+  &__imageContainer {
     width: 100%;
   }
 

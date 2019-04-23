@@ -1,6 +1,7 @@
 <template lang="pug">
-  .work__container.work__container--web(
+  .work.work--web(
     tabindex="0"
+    :class="{'work--active': hover}"
   )
     svg.work__inner(
       xmlns="http://www.w3.org/2000/svg"
@@ -8,18 +9,21 @@
       viewBox="0 0 263.11 212.37"
     )
       defs
-        clipPath(
+        clipPath.clippath(
           :id="pathID"
         )
           path(
             d="M129.09,28.09,7.46,64.93a8.51,8.51,0,0,0-6,8.14V139.3a8.5,8.5,0,0,0,6,8.14l121.63,36.85a8.45,8.45,0,0,0,4.93,0l121.64-36.85a8.51,8.51,0,0,0,6-8.14V73.07a8.52,8.52,0,0,0-6-8.14L134,28.09A8.45,8.45,0,0,0,129.09,28.09Z"
           )
-      // image.work__img(
-      //   xlink:href="~/assets/img/works/web/kf69nc.png"
-      //   clip-path="url(#clip-path)"
-      // )
       path.work__frame(
         d="M129.09,28.09,7.46,64.93a8.51,8.51,0,0,0-6,8.14V139.3a8.5,8.5,0,0,0,6,8.14l121.63,36.85a8.45,8.45,0,0,0,4.93,0l121.64-36.85a8.51,8.51,0,0,0,6-8.14V73.07a8.52,8.52,0,0,0-6-8.14L134,28.09A8.45,8.45,0,0,0,129.09,28.09Z"
+        @mouseover="hover = true"
+        @mouseleave="hover = false"
+      )
+      image.work__img(
+        xlink:href="~/assets/img/works/web/KF69_nc.jpg"
+        :clip-path="`url(#${pathID})`"
+        preserveAspectRatio="xMidYMid slice"
       )
 </template>
 
@@ -34,6 +38,10 @@ export default {
     },
   },
 
+  data: () => ({
+    hover: false,
+  }),
+
   computed: {
     pathID() {
       return `cp-${this.$uuid}`
@@ -43,10 +51,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$duration: 0.5s;
+
 .work {
-  &__container {
-    max-width: 300px;
-  }
+  max-width: 300px;
+  outline: none;
 
   &__inner {
     width: 100%;
@@ -54,6 +63,33 @@ export default {
 
   &__frame {
     stroke: $primary;
+    stroke-width: 1;
+    fill: transparent;
   }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    transition: ease-out $duration;
+    pointer-events: none;
+    transform-origin: center center;
+  }
+}
+
+// hover or focus
+.work--active,
+.work:focus {
+  .clippath {
+    transform: scale(0.91);
+  }
+
+  .work__img {
+    transform: scale(1.1);
+  }
+}
+
+.clippath {
+  transform-origin: center center;
+  transition: ease-out $duration;
 }
 </style>

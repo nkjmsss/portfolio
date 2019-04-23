@@ -117,6 +117,8 @@ $duration: 0.5s;
 // hover or focus
 .work--active,
 .work:focus {
+  cursor: pointer;
+
   .clippath {
     transform: scale(0.91);
   }

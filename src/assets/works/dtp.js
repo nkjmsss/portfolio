@@ -1,8 +1,11 @@
 export default [
   {
-    name: '第69期駒場祭委員会 新歓ウェブサイト',
-    image: '/web/KF69_nc.jpg',
-    href: 'https://www.komabasai.net/69/shinkan/',
+    name: '第91回五月祭 告知ビラ',
+    image: '/dtp/MF91_flyer1.png',
+  },
+  {
+    name: '第91回五月祭 公式パンフレット',
+    image: '/dtp/MF91_pamphlet.png',
   },
 ].map(obj => {
   obj.type = 'dtp'

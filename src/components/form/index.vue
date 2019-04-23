@@ -44,18 +44,35 @@
 </template>
 
 <script>
+import firebase from '~/plugins/firebase'
+
 export default {
   name: 'VForm',
 
   data: () => ({
-    name: 'name',
-    email: 'sample@sample.com',
-    content: 'content',
+    name: '',
+    email: '',
+    content: '',
   }),
 
   methods: {
     submitForm() {
-      console.log('POST') // TODO
+      const colref = firebase.firestore().collection('contact')
+
+      const data = {
+        name: this.name,
+        email: this.email,
+        content: this.content,
+      }
+
+      colref
+        .add(data)
+        .then(doc => {
+          console.log(doc)
+        })
+        .catch(err => {
+          console.error(err)
+        })
     },
   },
 }

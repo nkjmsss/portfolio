@@ -2,7 +2,7 @@ import pkg from './package'
 import ogp from './assets/config/ogp'
 
 export default {
-  mode: 'spa',
+  mode: 'universal',
 
   /*
    ** Headers of the page

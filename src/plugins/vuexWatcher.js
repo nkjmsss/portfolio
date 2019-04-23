@@ -19,7 +19,7 @@ export default ({ store }) => {
             await $sleep(100)
           }
 
-          store.commit('sethideContent', newValue)
+          store.commit('setHideContent', newValue)
         },
 
         // disable background scroll

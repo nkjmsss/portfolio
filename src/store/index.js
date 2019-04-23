@@ -4,7 +4,7 @@ export const state = () => ({
 })
 
 export const mutations = {
-  sethideContent(state, bool) {
+  setHideContent(state, bool) {
     state.hideContent = bool
   },
 

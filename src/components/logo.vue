@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import em from '~/plugins/em'
+
 export default {
   name: 'Logo',
 
@@ -24,15 +26,25 @@ export default {
     },
   },
 
+  data: () => ({
+    lineWidth: 0,
+  }),
+
   computed: {
     style() {
       return {
         'font-size': this.fontsize,
+        '--line-width': `${this.lineWidth}px`,
       }
     },
+
     className() {
       return `logo--${this.color}`
     },
+  },
+
+  mounted() {
+    this.lineWidth = em(0.08, this.$el)
   },
 }
 </script>
@@ -64,6 +76,7 @@ export default {
     display: block;
     width: 3.25em;
     height: 2px;
+    height: var(--line-width, 2px);
   }
 
   &::before {

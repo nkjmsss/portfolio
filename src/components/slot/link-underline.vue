@@ -3,12 +3,17 @@
     :to="to"
     exact
     :tabIndex="tabIndex"
+    :style="style"
   )
     slot
 </template>
 
 <script>
+import em from '~/plugins/em'
+
 export default {
+  name: 'VLink',
+
   props: {
     to: {
       type: String,
@@ -18,6 +23,7 @@ export default {
 
   data: () => ({
     classList: [],
+    lineWidth: 0,
   }),
 
   computed: {
@@ -28,6 +34,12 @@ export default {
     tabIndex() {
       return this.isActive ? -1 : 0
     },
+
+    style() {
+      return {
+        '--line-width': `${this.lineWidth}px`,
+      }
+    },
   },
 
   watch: {
@@ -37,6 +49,10 @@ export default {
       },
       immediate: true,
     },
+  },
+
+  mounted() {
+    this.lineWidth = em(0.1, this.$el)
   },
 
   methods: {
@@ -67,7 +83,8 @@ export default {
     left: 0;
     transform: translateX(-110%);
     width: 100%;
-    height: 0.1em;
+    height: 1px;
+    height: var(--line-width, 1px);
     background-color: currentColor;
     transition: ease-out 0.2s;
     transform-origin: left;

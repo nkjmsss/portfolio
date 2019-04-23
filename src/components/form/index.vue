@@ -66,8 +66,11 @@ export default {
         content: this.content,
       }
 
-      colref
-        .add(data)
+      const timeout = new Promise((resolve, reject) => {
+        window.setTimeout(() => reject(new Error('Time out')), 3000)
+      })
+
+      Promise.race([timeout, colref.add(data)])
         .then(doc => {
           this.$store.commit('setLoading', false)
         })

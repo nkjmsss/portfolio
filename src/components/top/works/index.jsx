@@ -16,6 +16,7 @@ export default Vue.component('works', {
         web: webContainer,
         dtp: webContainer, // TODO
         logo: webContainer, // TODO
+        others: webContainer, // TODO
       }[item.type]
 
       if (!component) {

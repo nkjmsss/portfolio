@@ -12,6 +12,7 @@
 import vHero from '~/components/top/hero'
 import vH1 from '~/components/slot/h1'
 import vWorksContainer from '~/components/top/works_container'
+import works from '~/assets/works'
 
 export default {
   // mixins: [load],
@@ -26,32 +27,7 @@ export default {
   }),
 
   data: () => ({
-    items: [
-      {
-        type: 'web',
-        name: 'sample1',
-      },
-      {
-        type: 'web',
-        name: 'sample2',
-      },
-      {
-        type: 'dtp',
-        name: 'sample1',
-      },
-      {
-        type: 'dtp',
-        name: 'sample2',
-      },
-      {
-        type: 'logo',
-        name: 'sample1',
-      },
-      {
-        type: 'logo',
-        name: 'sample2',
-      },
-    ],
+    items: works,
   }),
 }
 </script>

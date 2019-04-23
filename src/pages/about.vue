@@ -16,14 +16,26 @@
 import vH1 from '~/components/slot/h1'
 import vProfile from '~/components/about/profile'
 import vTable from '~/components/about/table'
+import meta from '~/plugins/meta'
 
 export default {
   name: 'AboutMe',
+
   components: {
     vH1,
     vProfile,
     vTable,
   },
+
+  mixins: [meta],
+
+  data: () => ({
+    meta: {
+      title: 'About me',
+      type: 'article',
+      url: '/about',
+    },
+  }),
 }
 </script>
 

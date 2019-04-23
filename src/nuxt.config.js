@@ -1,4 +1,5 @@
 import pkg from './package'
+import ogp from './assets/config/ogp'
 
 export default {
   mode: 'spa',
@@ -7,7 +8,11 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: pkg.name,
+    htmlAttrs: {
+      prefix: 'og: http://ogp.me/ns#',
+    },
+    titleTemplate: `%s | ${ogp.title}`,
+    title: ogp.title,
     meta: [
       {
         charset: 'utf-8',
@@ -17,17 +22,48 @@ export default {
         content: 'width=device-width, initial-scale=1',
       },
       {
-        hid: 'description',
-        name: 'description',
-        content: pkg.description,
-      },
-      {
         name: 'msapplication-TileColor',
         content: '#d9333f',
       },
       {
         name: 'theme-color',
         content: '#d9333f',
+      },
+      // OGP
+      {
+        hid: 'description',
+        name: 'description',
+        content: ogp.description,
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: ogp.title,
+      },
+      {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'website',
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: ogp.url,
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: ogp.title,
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: ogp.description,
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: ogp.image,
       },
     ],
     script: [

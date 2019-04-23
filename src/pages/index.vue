@@ -20,6 +20,11 @@ export default {
     vH1,
     vWorksContainer,
   },
+
+  head: () => ({
+    titleTemplate: null,
+  }),
+
   data: () => ({
     items: [
       {

@@ -12,4 +12,8 @@ init_firebase:
 
 deploy:
 	docker-compose run --rm nuxt npm run generate && \
+	firebase deploy --only hosting
+
+deploy-all:
+	docker-compose run --rm nuxt npm run generate && \
 	firebase deploy

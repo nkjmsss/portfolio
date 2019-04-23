@@ -6,6 +6,7 @@ export default [
   {
     name: '第91回五月祭 公式パンフレット',
     image: '/dtp/MF91_pamphlet.png',
+    href: 'https://gogatsusai.jp/committee/static/pdf/pamphlet.pdf',
   },
 ].map(obj => {
   obj.type = 'dtp'

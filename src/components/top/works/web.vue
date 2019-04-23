@@ -4,28 +4,39 @@
     :class="{'work--active': hover}"
     @click="handleClick"
   )
+
     svg.work__imageContainer(
       xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      viewBox="0 0 263.11 212.37"
+      viewBox="0 0 263.11 159.77"
     )
       defs
-        clipPath.clippath(
-          :id="pathID"
+        path(
+          :id="`path-${uuid}`"
+          d="M129.09,1.78,7.46,38.63a8.5,8.5,0,0,0-6,8.14V113a8.5,8.5,0,0,0,6,8.14L129.09,158a8.62,8.62,0,0,0,4.93,0l121.64-36.85a8.51,8.51,0,0,0,6-8.14V46.77a8.51,8.51,0,0,0-6-8.14L134,1.78A8.62,8.62,0,0,0,129.09,1.78Z"
         )
-          path(
-            d="M129.09,28.09,7.46,64.93a8.51,8.51,0,0,0-6,8.14V139.3a8.5,8.5,0,0,0,6,8.14l121.63,36.85a8.45,8.45,0,0,0,4.93,0l121.64-36.85a8.51,8.51,0,0,0,6-8.14V73.07a8.52,8.52,0,0,0-6-8.14L134,28.09A8.45,8.45,0,0,0,129.09,28.09Z"
+        clipPath.clippath(
+          :id="`clippath-${uuid}`"
+        )
+          use(
+            :xlink:href="`#path-${uuid}`"
           )
-      path.work__frame(
-        d="M129.09,28.09,7.46,64.93a8.51,8.51,0,0,0-6,8.14V139.3a8.5,8.5,0,0,0,6,8.14l121.63,36.85a8.45,8.45,0,0,0,4.93,0l121.64-36.85a8.51,8.51,0,0,0,6-8.14V73.07a8.52,8.52,0,0,0-6-8.14L134,28.09A8.45,8.45,0,0,0,129.09,28.09Z"
+
+      use.work__frame(
+        :xlink:href="`#path-${uuid}`"
         @mouseover="hover = true"
         @mouseleave="hover = false"
       )
       image.work__img(
         :xlink:href="require(`~/assets/img/works${item.image}`)"
-        :clip-path="`url(#${pathID})`"
+        :clip-path="`url(#clippath-${uuid})`"
         preserveAspectRatio="xMidYMid slice"
+        width="100%"
+        height="100%"
       )
+
+    .work__description
+      div.work__description__type {{item.type.toLowerCase()}}
+      div.work__description__name {{item.name}}
 </template>
 
 <script>
@@ -44,8 +55,8 @@ export default {
   }),
 
   computed: {
-    pathID() {
-      return `cp-${this.$uuid}`
+    uuid() {
+      return this.$uuid
     },
   },
 
@@ -61,8 +72,9 @@ export default {
 $duration: 0.5s;
 
 .work {
-  max-width: 300px;
+  max-width: 400px;
   outline: none;
+  margin: 40px 0;
 
   &__imageContainer {
     width: 100%;
@@ -75,11 +87,17 @@ $duration: 0.5s;
   }
 
   &__img {
-    width: 100%;
-    height: 100%;
     transition: ease-out $duration;
     pointer-events: none;
     transform-origin: center center;
+  }
+
+  &__description {
+    text-align: center;
+
+    &__type {
+      color: $primary;
+    }
   }
 }
 

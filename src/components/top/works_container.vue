@@ -77,6 +77,7 @@ export default {
   &__row {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
   }
 }
 </style>

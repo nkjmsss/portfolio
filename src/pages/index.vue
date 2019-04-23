@@ -1,10 +1,11 @@
 <template lang="pug">
   div
     v-hero
-    v-h1 works
-    v-works-container(
-      :items="items"
-    )
+    section
+      v-h1 works
+      v-works-container(
+        :items="items"
+      )
 </template>
 
 <script>

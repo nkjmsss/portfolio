@@ -65,6 +65,16 @@ export default {
         property: 'og:image',
         content: ogp.image,
       },
+      {
+        hid: 'og:image:width',
+        property: 'og:image:width',
+        content: 1200,
+      },
+      {
+        hid: 'og:image:height',
+        property: 'og:image:height',
+        content: 630,
+      },
     ],
     script: [
       {

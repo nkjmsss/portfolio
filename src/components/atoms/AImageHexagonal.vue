@@ -1,8 +1,9 @@
 <template lang="pug">
-  svg.profile-img(
+  svg.a-image--hexagonal(
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 142.357 129.093"
+    :style="{width: `${width}px`}"
   )
     defs
       pattern#pattern(
@@ -11,10 +12,11 @@
         height="100%"
         viewBox="0 0 498 467"
       )
+        //- TODO: なぜこっちでrequireできないのか特定したい（なぜかmodule not found）
         image(
           width="498"
           height="467"
-          xlink:href="./profile.jpg"
+          :xlink:href="src"
         )
 
     path(
@@ -24,8 +26,23 @@
     )
 </template>
 
-<style lang="scss" scoped>
-.profile-img {
-  width: 150px;
+<script>
+export default {
+  name: 'AImageHexagonal',
+  props: {
+    width: {
+      type: Number,
+      default: 150,
+    },
+    src: {
+      type: String,
+      required: true,
+    },
+  },
+  // computed: {
+  //   img() {
+  //     return require(this.src)
+  //   },
+  // },
 }
-</style>
+</script>

@@ -9,14 +9,12 @@
 </template>
 
 <script>
-// import load from '~/plugins/longLoading'
 import vHero from '~/components/top/hero'
 import vH1 from '~/components/slot/h1'
 import vWorksContainer from '~/components/top/works_container'
 import works from '~/assets/works'
 
 export default {
-  // mixins: [load],
   components: {
     vHero,
     vH1,

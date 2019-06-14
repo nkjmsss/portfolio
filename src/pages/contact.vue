@@ -9,7 +9,6 @@
 <script>
 import vH1 from '~/components/slot/h1'
 import vForm from '~/components/form'
-import meta from '~/plugins/meta'
 
 export default {
   name: 'Contact',
@@ -18,8 +17,6 @@ export default {
     vH1,
     vForm,
   },
-
-  mixins: [meta],
 
   data: () => ({
     meta: {

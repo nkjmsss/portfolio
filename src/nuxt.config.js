@@ -1,5 +1,4 @@
-import pkg from './package'
-import ogp from './assets/config/ogp'
+import ogp from './lib/settings/ogp.js'
 
 export default {
   mode: 'universal',
@@ -138,19 +137,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    '~/plugins/sleep',
-    {
-      src: '~/plugins/routerOption',
-      ssr: false,
-    },
-    {
-      src: '~/plugins/vuexWatcher',
-      ssr: false,
-    },
-    '~/plugins/firebase',
-    '~/plugins/uuid',
-  ],
+  plugins: ['~/plugins/index.js'],
 
   /*
    ** Nuxt.js modules
@@ -183,6 +170,9 @@ export default {
           loader: 'eslint-loader',
           exclude: /(node_modules)/,
         })
+
+        const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
+        config.plugins.push(new HardSourceWebpackPlugin())
       }
     },
   },
@@ -199,5 +189,12 @@ export default {
    */
   googleAnalytics: {
     id: 'UA-138695918-1',
+  },
+
+  /**
+   * router
+   */
+  router: {
+    middleware: ['router'],
   },
 }

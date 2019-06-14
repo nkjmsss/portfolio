@@ -110,8 +110,8 @@
 </style>
 
 <script>
-import menu from '~/assets/config/menu'
-import sns from '~/assets/config/sns'
+import menu from '~/lib/settings/menu.js'
+import sns from '~/lib/settings/sns.js'
 import vLink from '~/components/slot/link-underline'
 import vLogo from '~/components/logo'
 

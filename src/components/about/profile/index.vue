@@ -9,7 +9,7 @@
 <script>
 import vImage from './image'
 import vLink from '~/components/slot/link-underline'
-import sns from '~/assets/config/sns'
+import sns from '~/lib/settings/sns.js'
 
 export default {
   name: 'Profile',

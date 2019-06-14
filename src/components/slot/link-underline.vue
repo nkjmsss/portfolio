@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import em from '~/plugins/em'
+import em from '~/lib/helpers/em.js'
 
 export default {
   name: 'VLink',
@@ -47,12 +47,13 @@ export default {
       handler() {
         this.setClassList()
       },
-      immediate: true,
+      // immediate: true,
     },
   },
 
   mounted() {
     this.lineWidth = em(0.1, this.$el)
+    this.setClassList()
   },
 
   methods: {

@@ -36,6 +36,10 @@ export default {
       return this.$route.path !== '/'
     },
   },
+
+  created() {
+    this.$store.dispatch('init')
+  },
 }
 </script>
 

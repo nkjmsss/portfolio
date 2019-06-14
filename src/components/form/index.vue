@@ -44,8 +44,6 @@
 </template>
 
 <script>
-import firebase from '~/plugins/firebase'
-
 export default {
   name: 'VForm',
 
@@ -59,7 +57,7 @@ export default {
     submitForm() {
       this.$store.commit('setLoading', true)
 
-      const colref = firebase.firestore().collection('contact')
+      const colref = this.$firebase.firestore().collection('contact')
       const data = {
         name: this.name,
         email: this.email,

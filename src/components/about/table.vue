@@ -13,10 +13,10 @@
         th.table__heading メイン言語
         td.table__item
           ul.table-list
-            li.table-list__item HTML, CSS (SASS等含む)
-            li.table-list__item JavaScript (Vue.js, React.js, TypeScript)
-            li.table-list__item Node.js
+            li.table-list__item HTML, SCSS
+            li.table-list__item JavaScript (Nuxt.js, TypeScript)
             li.table-list__item Go
+            li.table-list__item Node.js
       tr.table__row
         th.table__heading 使用ツール
         td.table__item

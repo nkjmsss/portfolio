@@ -9,19 +9,17 @@
           | web制作が得意で、デザインからフロントエンド、バックエンドまで幅広く対応可能です。また、ロゴやdtpの制作実績もございます。
           | 個人でゼロから制作することが多いですが、複数人での開発経験もあるのでどちらも対応できます。
       v-profile
-    v-table
+    o-profile-table
 </template>
 
 <script>
 import vProfile from '~/components/about/profile'
-import vTable from '~/components/about/table'
 
 export default {
   name: 'AboutMe',
 
   components: {
     vProfile,
-    vTable,
   },
 
   data: () => ({

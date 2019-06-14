@@ -1,7 +1,9 @@
+import MFooter from './MFooter'
 import MHeader from './MHeader'
 
-export { MHeader }
+export { MFooter, MHeader }
 
 export default {
+  MFooter,
   MHeader,
 }

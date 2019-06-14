@@ -7,7 +7,7 @@
       :class="[{hide}, {'ma-w': setMaxWidth}]"
     )
       nuxt
-    v-footer.fade(
+    m-footer.fade(
       :class="{hide}"
     )
     v-loading
@@ -15,13 +15,11 @@
 
 <script>
 import vFrame from '~/components/frame'
-import vFooter from '~/components/footer'
 import vLoading from '~/components/loading'
 
 export default {
   components: {
     vFrame,
-    vFooter,
     vLoading,
   },
 

@@ -1,6 +1,6 @@
 <template lang="pug">
   nav.nav
-    v-logo(
+    a-logo(
       color="white"
     )
 
@@ -48,14 +48,9 @@
 <script>
 import menu from '~/lib/settings/menu.js'
 import sns from '~/lib/settings/sns.js'
-import vLogo from '~/components/logo'
 
 export default {
   name: 'MHeaderContentInner',
-
-  components: {
-    vLogo,
-  },
 
   data: () => ({
     menu: menu,

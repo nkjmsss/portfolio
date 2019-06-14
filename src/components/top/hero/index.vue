@@ -1,20 +1,15 @@
 <template lang="pug">
   div.hero
     .hero__title
-      v-logo(
+      a-logo(
         fontsize="2rem"
       )
       p.hero__title__sub portfolio
 </template>
 
 <script>
-import vLogo from '~/components/logo'
-
 export default {
   name: 'Hero',
-  components: {
-    vLogo,
-  },
 }
 </script>
 

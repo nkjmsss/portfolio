@@ -10,7 +10,7 @@
 import FadeLoader from 'vue-spinner/src/FadeLoader.vue'
 
 export default {
-  name: 'Loading',
+  name: 'ALoading',
 
   components: {
     FadeLoader,

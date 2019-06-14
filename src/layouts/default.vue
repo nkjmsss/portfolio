@@ -1,6 +1,6 @@
 <template lang="pug">
   div.layput--default
-    v-frame
+    a-frame
     m-header
     // z-indexの問題があるため、別個にトランジションさせる
     main.container.fade(
@@ -10,19 +10,11 @@
     m-footer.fade(
       :class="{hide}"
     )
-    v-loading
+    a-loading
 </template>
 
 <script>
-import vFrame from '~/components/frame'
-import vLoading from '~/components/loading'
-
 export default {
-  components: {
-    vFrame,
-    vLoading,
-  },
-
   computed: {
     hide() {
       return this.$store.state.hideContent

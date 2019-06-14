@@ -1,12 +1,12 @@
 <template lang="pug">
-  .frame(
+  .a-frame(
     :style="style"
   )
 </template>
 
 <script>
 export default {
-  name: 'VFrame',
+  name: 'AFrame',
 
   data: () => ({
     height: 0,
@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.frame {
+.a-frame {
   position: fixed;
   top: 0;
   left: 0;

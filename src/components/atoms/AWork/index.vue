@@ -1,7 +1,8 @@
-import Vue from 'vue'
+<script>
 import webContainer from './web.vue'
 
-export default Vue.component('works', {
+export default {
+  name: 'AWork',
   functional: true,
   props: {
     item: {
@@ -38,4 +39,5 @@ export default Vue.component('works', {
       context.children
     )
   },
-})
+}
+</script>

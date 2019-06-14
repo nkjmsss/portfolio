@@ -3,10 +3,10 @@
     template(
       v-for="pattern in itemsSeparate"
     )
-      .works__container__row(
+      .m-works__container__row(
         v-for="row in pattern"
       )
-        v-work(
+        a-work(
           v-for="item in row"
           :key="item.name"
           :item="item"
@@ -15,14 +15,8 @@
 </template>
 
 <script>
-import vWork from '~/components/top/works'
-
 export default {
-  name: 'WorksContainer',
-
-  components: {
-    vWork,
-  },
+  name: 'MWorksContainer',
 
   props: {
     items: {
@@ -83,7 +77,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.works__container {
+.m-works__container {
   &__row {
     display: flex;
     justify-content: space-around;

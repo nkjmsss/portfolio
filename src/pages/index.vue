@@ -1,24 +1,17 @@
 <template lang="pug">
   div
-    v-hero
+    m-hero
     section
       a-h1 works
-      v-works-container(
+      m-works-container(
         :items="items"
       )
 </template>
 
 <script>
-import vHero from '~/components/top/hero'
-import vWorksContainer from '~/components/top/works_container'
 import works from '~/assets/works'
 
 export default {
-  components: {
-    vHero,
-    vWorksContainer,
-  },
-
   head: () => ({
     titleTemplate: null,
   }),
@@ -28,5 +21,3 @@ export default {
   }),
 }
 </script>
-
-<style lang="scss" scoped></style>

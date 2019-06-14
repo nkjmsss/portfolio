@@ -1,20 +1,20 @@
 <template lang="pug">
-  div.hero
-    .hero__title
+  div.m-hero
+    .m-hero__title
       a-logo(
         fontsize="2rem"
       )
-      p.hero__title__sub portfolio
+      p.m-hero__title__sub portfolio
 </template>
 
 <script>
 export default {
-  name: 'Hero',
+  name: 'MHero',
 }
 </script>
 
 <style lang="scss" scoped>
-.hero {
+.m-hero {
   @include font-en;
 
   &__title {

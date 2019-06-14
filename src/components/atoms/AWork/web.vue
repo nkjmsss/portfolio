@@ -138,7 +138,6 @@ $duration: 0.5s;
   transition: ease-out $duration;
 }
 
-// TODO
 .link-wrap {
   color: inherit;
   text-decoration: inherit;

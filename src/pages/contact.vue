@@ -16,12 +16,10 @@ export default {
     vForm,
   },
 
-  data: () => ({
-    meta: {
+  head() {
+    return {
       title: 'Contact',
-      type: 'article',
-      url: '/contact',
-    },
-  }),
+    }
+  },
 }
 </script>

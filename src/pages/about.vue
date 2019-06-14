@@ -13,13 +13,11 @@
 export default {
   name: 'AboutMe',
 
-  data: () => ({
-    meta: {
+  head() {
+    return {
       title: 'About me',
-      type: 'article',
-      url: '/about',
-    },
-  }),
+    }
+  },
 }
 </script>
 

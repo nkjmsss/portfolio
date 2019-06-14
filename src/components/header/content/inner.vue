@@ -9,7 +9,7 @@
         v-for="item in menu"
         :key="item.title"
       )
-        v-link(
+        a-link(
           :to="item.href"
           :tabindex="tabIndex"
         ) {{item.title}}
@@ -22,7 +22,7 @@
               v-for="child in item.children"
               :key="child.title"
             )
-              v-link(
+              a-link(
                 :to="child.href"
                 :tabindex="tabIndex"
               ) {{child.title}}
@@ -112,12 +112,10 @@
 <script>
 import menu from '~/lib/settings/menu.js'
 import sns from '~/lib/settings/sns.js'
-import vLink from '~/components/slot/link-underline'
 import vLogo from '~/components/logo'
 
 export default {
   components: {
-    vLink,
     vLogo,
   },
 

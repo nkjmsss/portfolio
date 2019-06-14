@@ -1,6 +1,6 @@
 <template lang="pug">
   article
-    v-h1 About me
+    a-h1 About me
     .flex-md
       .introduction
         p
@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import vH1 from '~/components/slot/h1'
 import vProfile from '~/components/about/profile'
 import vTable from '~/components/about/table'
 
@@ -21,7 +20,6 @@ export default {
   name: 'AboutMe',
 
   components: {
-    vH1,
     vProfile,
     vTable,
   },

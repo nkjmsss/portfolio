@@ -1,5 +1,5 @@
 <template lang="pug">
-  nuxt-link.link--underline(
+  nuxt-link.a-link--underline(
     :to="to"
     exact
     :tabIndex="tabIndex"
@@ -12,7 +12,7 @@
 import em from '~/lib/helpers/em.js'
 
 export default {
-  name: 'VLink',
+  name: 'ALink',
 
   props: {
     to: {
@@ -67,7 +67,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.link--underline {
+.a-link--underline {
   position: relative;
   display: inline-block;
   height: 1.2em;

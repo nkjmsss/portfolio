@@ -2,7 +2,7 @@
   div
     v-hero
     section
-      v-h1 works
+      a-h1 works
       v-works-container(
         :items="items"
       )
@@ -10,14 +10,12 @@
 
 <script>
 import vHero from '~/components/top/hero'
-import vH1 from '~/components/slot/h1'
 import vWorksContainer from '~/components/top/works_container'
 import works from '~/assets/works'
 
 export default {
   components: {
     vHero,
-    vH1,
     vWorksContainer,
   },
 

@@ -5,7 +5,7 @@
         v-for="item in menu"
         :key="item.title"
       )
-        v-link(
+        a-link(
           :to="item.href"
         ) {{item.title}}
 
@@ -17,7 +17,7 @@
               v-for="child in item.children"
               :key="child.title"
             )
-              v-link(
+              a-link(
                 :to="child.href"
               ) {{child.title}}
 
@@ -39,6 +39,18 @@
 
     .copyright ©2019 nkjmsss
 </template>
+
+<script>
+import menu from '~/lib/settings/menu.js'
+import sns from '~/lib/settings/sns.js'
+
+export default {
+  data: () => ({
+    menu: menu,
+    sns: sns,
+  }),
+}
+</script>
 
 <style lang="scss" scoped>
 footer {
@@ -155,20 +167,3 @@ footer {
   margin: 0.5em 0;
 }
 </style>
-
-<script>
-import menu from '~/lib/settings/menu.js'
-import sns from '~/lib/settings/sns.js'
-import vLink from '~/components/slot/link-underline'
-
-export default {
-  components: {
-    vLink,
-  },
-
-  data: () => ({
-    menu: menu,
-    sns: sns,
-  }),
-}
-</script>

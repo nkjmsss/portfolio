@@ -1,7 +1,7 @@
 <template lang="pug">
   div.layput--default
     v-frame
-    v-header
+    m-header
     // z-indexの問題があるため、別個にトランジションさせる
     main.container.fade(
       :class="[{hide}, {'ma-w': setMaxWidth}]"
@@ -15,14 +15,12 @@
 
 <script>
 import vFrame from '~/components/frame'
-import vHeader from '~/components/header'
 import vFooter from '~/components/footer'
 import vLoading from '~/components/loading'
 
 export default {
   components: {
     vFrame,
-    vHeader,
     vFooter,
     vLoading,
   },

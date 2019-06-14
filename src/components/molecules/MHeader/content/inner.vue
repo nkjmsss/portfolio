@@ -45,6 +45,35 @@
           )
 </template>
 
+<script>
+import menu from '~/lib/settings/menu.js'
+import sns from '~/lib/settings/sns.js'
+import vLogo from '~/components/logo'
+
+export default {
+  name: 'MHeaderContentInner',
+
+  components: {
+    vLogo,
+  },
+
+  data: () => ({
+    menu: menu,
+    sns: sns,
+  }),
+
+  computed: {
+    isOpen() {
+      return this.$store.state.menuOpen
+    },
+
+    tabIndex() {
+      return this.isOpen ? 0 : -1
+    },
+  },
+}
+</script>
+
 <style lang="scss" scoped>
 .nav {
   display: flex;
@@ -108,30 +137,3 @@
   }
 }
 </style>
-
-<script>
-import menu from '~/lib/settings/menu.js'
-import sns from '~/lib/settings/sns.js'
-import vLogo from '~/components/logo'
-
-export default {
-  components: {
-    vLogo,
-  },
-
-  data: () => ({
-    menu: menu,
-    sns: sns,
-  }),
-
-  computed: {
-    isOpen() {
-      return this.$store.state.menuOpen
-    },
-
-    tabIndex() {
-      return this.isOpen ? 0 : -1
-    },
-  },
-}
-</script>

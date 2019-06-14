@@ -10,7 +10,7 @@ import vContent from './content'
 import { tabTrapEnable, tabTrapDisable } from '~/mixins/tabTrapping'
 
 export default {
-  name: 'VHeader',
+  name: 'MHeader',
 
   components: {
     vHamberger,

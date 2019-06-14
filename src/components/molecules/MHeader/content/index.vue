@@ -11,6 +11,8 @@
 import headerInner from './inner'
 
 export default {
+  name: 'MHeaderContent',
+
   components: {
     headerInner,
   },

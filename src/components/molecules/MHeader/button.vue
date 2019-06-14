@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'Hamberger',
+  name: 'MHeaderHamberger',
   computed: {
     isOpen() {
       return this.$store.state.menuOpen

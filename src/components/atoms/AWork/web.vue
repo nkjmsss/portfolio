@@ -27,17 +27,17 @@
               :xlink:href="`#path-${uuid}`"
             )
 
-        use.work__frame(
-          :xlink:href="`#path-${uuid}`"
-          @mouseover="hover = true"
-          @mouseleave="hover = false"
-        )
         image.work__img(
           :xlink:href="require(`~/assets/img/works${item.image}`)"
           :clip-path="`url(#clippath-${uuid})`"
           preserveAspectRatio="xMidYMid slice"
           width="100%"
           height="100%"
+        )
+        use.work__frame(
+          :xlink:href="`#path-${uuid}`"
+          @mouseover="hover = true"
+          @mouseleave="hover = false"
         )
 
       .work__description

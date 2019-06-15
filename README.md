@@ -1,14 +1,5 @@
-# nkjmsss
+# [nkjmsss portfolio](https://nkjmsss.com)
 
 リポジトリをご覧いただきありがとうございます。ここでは私のポートフォリオサイトのコードを公開しています。
 
 セキュリティのためにfirebase関連のコードはプライベートリポジトリで管理していますが、フロントエンドのコードはすべて公開しています。気になった方はぜひご覧ください。
-
-## 起動方法
-
-```shell
-$ make init
-$ docker-compose up -d
-```
-
-すると、[localhost:3000](http://localhost:3000)で起動します。

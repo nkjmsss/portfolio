@@ -11,9 +11,9 @@ export default {
   name: 'Contact',
 
   head() {
-    return {
+    return this.$createHead({
       title: 'Contact',
-    }
+    })
   },
 }
 </script>

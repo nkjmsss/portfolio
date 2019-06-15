@@ -14,9 +14,9 @@ export default {
   name: 'AboutMe',
 
   head() {
-    return {
+    return this.$createHead({
       title: 'About me',
-    }
+    })
   },
 }
 </script>

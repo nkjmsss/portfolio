@@ -1,7 +1,7 @@
 <template lang="pug">
-  .work.work--web(
+  .work(
+    :class="[{'work--active': hover}, `work--${type}`]"
     tabindex="0"
-    :class="{'work--active': hover}"
     @click="handleClick"
     :style="{width: containerWidth}"
   )
@@ -18,7 +18,7 @@
         defs
           path(
             :id="`path-${uuid}`"
-            d="M129.09,1.78,7.46,38.63a8.5,8.5,0,0,0-6,8.14V113a8.5,8.5,0,0,0,6,8.14L129.09,158a8.62,8.62,0,0,0,4.93,0l121.64-36.85a8.51,8.51,0,0,0,6-8.14V46.77a8.51,8.51,0,0,0-6-8.14L134,1.78A8.62,8.62,0,0,0,129.09,1.78Z"
+            :d="path"
           )
           clipPath.clippath(
             :id="`clippath-${uuid}`"
@@ -47,7 +47,7 @@
 
 <script>
 export default {
-  name: 'AWorkWeb',
+  name: 'AWork',
 
   props: {
     item: {
@@ -71,6 +71,22 @@ export default {
 
     containerWidth() {
       return `${70 / this.maxRowCount}%`
+    },
+
+    type() {
+      return this.item.type
+    },
+
+    path() {
+      const webPath =
+        'M129.09,1.78,7.46,38.63a8.5,8.5,0,0,0-6,8.14V113a8.5,8.5,0,0,0,6,8.14L129.09,158a8.62,8.62,0,0,0,4.93,0l121.64-36.85a8.51,8.51,0,0,0,6-8.14V46.77a8.51,8.51,0,0,0-6-8.14L134,1.78A8.62,8.62,0,0,0,129.09,1.78Z'
+
+      return {
+        web: webPath,
+        dtp: webPath, // TODO
+        logo: webPath, // TODO
+        others: webPath, // TODO
+      }[this.type]
     },
   },
 

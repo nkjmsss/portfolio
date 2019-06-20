@@ -1,4 +1,3 @@
-import AWork from './AWork'
 import AButton from './AButton.vue'
 import AFrame from './AFrame.vue'
 import AH1 from './AH1.vue'
@@ -11,9 +10,9 @@ import ALogo from './ALogo.vue'
 import ATable from './ATable.vue'
 import ATextField from './ATextField.vue'
 import AUl from './AUl.vue'
+import AWork from './AWork'
 
 export {
-  AWork,
   AButton,
   AFrame,
   AH1,
@@ -26,10 +25,10 @@ export {
   ATable,
   ATextField,
   AUl,
+  AWork,
 }
 
 export default {
-  AWork,
   AButton,
   AFrame,
   AH1,
@@ -42,4 +41,5 @@ export default {
   ATable,
   ATextField,
   AUl,
+  AWork,
 }

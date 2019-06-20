@@ -10,6 +10,11 @@ export default [
     href: 'https://www.komabasai.net/69/visitor/',
   },
   {
+    name: '第92回五月祭 公式ウェブサイト',
+    image: '/web/MF92.png',
+    href: 'https://www.gogatsusai.jp/',
+  },
+  {
     name: 'AI-STANDARD コーポレートサイト',
     image: '/web/AI-STANDARD.png',
     href: 'https://standard2017.com/',

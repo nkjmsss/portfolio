@@ -47,7 +47,7 @@ export default {
 
   computed: {
     uuid() {
-      return this.$uuid()
+      return this.$uuid
     },
   },
 }

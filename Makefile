@@ -1,19 +1,26 @@
+nuxt = docker-compose run --rm nuxt
+
+.PHONY: init
 init:
-	docker-compose build && \
-	make init_node && \
-	make init_firebase
+	docker-compose build
+	@make init_node
+	@make init_firebase
 
+.PHONY: init_node
 init_node:
-	docker-compose run --rm nuxt npm i
+	$(nuxt) npm i
 
+.PHONY: init_firebase
 init_firebase:
 	cd firebase/functions && \
 	npm i
 
+.PHONY: deploy
 deploy:
-	docker-compose run --rm nuxt npm run generate && \
+	$(nuxt) npm run generate && \
 	firebase deploy --only hosting
 
-deploy-all:
-	docker-compose run --rm nuxt npm run generate && \
+.PHONY: deploy_all
+deploy_all:
+	$(nuxt) npm run generate && \
 	firebase deploy

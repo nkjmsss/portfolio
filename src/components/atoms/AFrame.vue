@@ -15,10 +15,13 @@ export default {
 
   computed: {
     style() {
-      return {
-        height: `${this.height}px`,
-        width: `${this.width}px`,
+      if (this.height && this.width) {
+        return {
+          height: `${this.height}px`,
+          width: `${this.width}px`,
+        }
       }
+      return {}
     },
   },
 

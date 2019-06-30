@@ -3,9 +3,10 @@
     m-hero
     section
       a-h1 works
-      m-works-container(
-        :items="items"
-      )
+      no-ssr
+        m-works-container(
+          :items="items"
+        )
 </template>
 
 <script>

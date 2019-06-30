@@ -157,5 +157,7 @@ $duration: 0.5s;
 .link-wrap {
   color: inherit;
   text-decoration: inherit;
+  display: inline-block;
+  width: 100%;
 }
 </style>

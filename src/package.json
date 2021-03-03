@@ -21,7 +21,7 @@
     "hard-source-webpack-plugin": "^0.13.1",
     "node-sass": "^4.11.0",
     "nuxt": "^2.8.1",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "sass-loader": "^7.1.0",
     "vue-spinner": "^1.0.3"
   },
